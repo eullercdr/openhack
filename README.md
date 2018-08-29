@@ -11,4 +11,11 @@ docker push acreullercristian.azurecr.io/minecraft
 ## List Images
 az acr repository list --name acrEullerCristian --output table
 
+## Mostra o login server
 az acr show --name acrEullerCristian --query loginServer
+
+## Exibe a senha
+az acr credential show --name acrEullerCristian --query "passwords[0].value"
+
+## Realiza o deploy
+az container create --resource-group myDockerImages --name minecraft-app --image acreullercristian.azurecr.io/minecraft --cpu 1 --memory 1 --registry-login-server acreullercristian.azurecr.io --registry-username acrEullerCristian --registry-password <password> --dns-name-label aci-demo --ports 80
