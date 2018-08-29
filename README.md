@@ -25,3 +25,13 @@ az container logs -n minecraft-app5 -g myDockerImages
 
 ## Illustrated Kubernetes
 https://cdn.chrisshort.net/The-Illustrated-Childrens-Guide-to-Kubernetes.pdf
+
+## Get Credentials Kubernetes
+az aks get-credentials --resource-group MinecraftKubernets --name MinecraftCluster
+
+## Get Nodes Kubernetes
+kubectl get nodes
+
+## Kubernets Browse
+az aks browse --resource-group MinecraftKubernets --name MinecraftCluster
+
