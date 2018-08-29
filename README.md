@@ -19,3 +19,7 @@ az acr credential show --name acrEullerCristian --query "passwords[0].value"
 
 ## Make a deploy of container
 az container create --resource-group myDockerImages --name minecraft-app --image acreullercristian.azurecr.io/minecraft --cpu 1 --memory 1 --registry-login-server acreullercristian.azurecr.io --registry-username acrEullerCristian --registry-password <password> --dns-name-label aci-demo --ports 80
+
+## Verify status of container
+az container logs -n minecraft-app5 -g myDockerImages
+
