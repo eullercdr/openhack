@@ -35,3 +35,14 @@ kubectl get nodes
 ## Kubernets Browse
 az aks browse --resource-group MinecraftKubernets --name MinecraftCluster
 
+## Commands the Power Shell
+az aks get-credentials --resource-group recurso-animalab --name aks-animalab  
+
+## Create yaml and apply to Azure Aks
+kubectl apply -f file.yaml 
+
+## Get Services AKS
+kubectl get services 
+
+
+
