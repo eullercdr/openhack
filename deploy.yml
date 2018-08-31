@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: azure-minecraft
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: azure-minecraft
+    spec:
+      containers:
+      - name: azure-minecraft
+        image: openhack/minecraft-server
+        ports:
+        - containerPort: 25565
+          name: defaultport
+        env:
+        - name: EULA
+          value: "TRUE"
+        volumeMounts:
+        - name: azure-minecraft-disk
+          mountPath: /mnt/azure/
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-minecraft
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 25565
+  selector:
+    app: azure-minecraft:wq
