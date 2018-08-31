@@ -4,6 +4,9 @@ OpenHack 2018
 https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr
 https://docs.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-deploy-app
 
+## Illustrated Kubernetes
+https://cdn.chrisshort.net/The-Illustrated-Childrens-Guide-to-Kubernetes.pdf
+
 ## Create a Tag
 docker tag repo acreullercristian.azurecr.io/minecraft  
 docker push acreullercristian.azurecr.io/minecraft  
@@ -22,9 +25,6 @@ az container create --resource-group myDockerImages --name minecraft-app --image
 
 ## Verify status of container
 az container logs -n minecraft-app5 -g myDockerImages
-
-## Illustrated Kubernetes
-https://cdn.chrisshort.net/The-Illustrated-Childrens-Guide-to-Kubernetes.pdf
 
 ## Get Credentials Kubernetes
 az aks get-credentials --resource-group MinecraftKubernets --name MinecraftCluster
